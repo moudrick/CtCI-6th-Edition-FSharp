@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>Ch_01._Arrays_and_Strings</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="Q1 01 Is Unique.fs" />
+    <Compile Include="Q1_07_Rotate_Matrix.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ctci.Contracts\ctci.Contracts.fsproj" />
+    <ProjectReference Include="..\ctci.Library\ctci.Library.fsproj" />
+  </ItemGroup>
+
+</Project>
