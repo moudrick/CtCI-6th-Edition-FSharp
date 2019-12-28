@@ -51,7 +51,7 @@ type ``Q1 07 - Rotate Matrix``() =
 
         printfn ""
         let toIntListList = [ for i in 0 .. (matrix |> Array2D.length1) - 1
-            do List.ofArray matrix.[i, 0..(matrix |> Array2D.length2) - 1] ]
+            do yield List.ofArray matrix.[i, 0..(matrix |> Array2D.length2) - 1] ]
         AssortedMethods.PrintIntListListMatrix (rotateMatrixByRevTranspose toIntListList)
 
         printfn "---------------------------------"
