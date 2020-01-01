@@ -92,4 +92,4 @@ type ``Q1 01 - Is Unique``() =
                 (IsUniqueChars word) (IsUniqueChars_ImmutableSet word)
                 (IsUniqueChars_ZipWithSort word) (IsUniqueChars_ExtendedAscii word)
 
-        ignore()
+        |> ignore

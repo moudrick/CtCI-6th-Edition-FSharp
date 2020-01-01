@@ -26,7 +26,7 @@ type ``Q1 07 - Rotate Matrix``() =
 
                 // top -> right
                 matrix.[i, last] <- top // right <- saved top
-        ignore()
+        |> ignore
 
     let rotateMatrixByRevTranspose m = m |> List.rev |> List.transpose
 
@@ -50,8 +50,7 @@ type ``Q1 07 - Rotate Matrix``() =
         AssortedMethods.PrintMatrix matrix
 
         printfn ""
-        let toIntListList = [ for i in 0 .. (matrix |> Array2D.length1) - 1
-            do yield List.ofArray matrix.[i, 0..(matrix |> Array2D.length2) - 1] ]
+        let toIntListList = List.init (matrix |> Array2D.length1) (fun i -> List.ofArray matrix.[i, *] )
         AssortedMethods.PrintIntListListMatrix (rotateMatrixByRevTranspose toIntListList)
 
         printfn "---------------------------------"
@@ -63,4 +62,4 @@ type ``Q1 07 - Rotate Matrix``() =
         printfn ""
         AssortedMethods.PrintIntListListMatrix (rotateMatrixByRevCustomTranspose matrix)
 
-        ignore()
+        |> ignore
