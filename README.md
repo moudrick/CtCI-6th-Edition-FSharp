@@ -114,7 +114,7 @@
 - [ ] 9.8 - Paste Bin
 
 #### Chapter 10
-- [ ] 10.1 - Sorted Merge
+- [x] 10.1 - Sorted Merge
 - [ ] 10.2 - Group Anagrams
 - [ ] 10.3 - Search In Rotated Array
 - [ ] 10.4 - Sorted Search No Size
