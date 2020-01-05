@@ -2,12 +2,11 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <RootNamespace>Ch_01._Arrays_and_Strings</RootNamespace>
+    <RootNamespace>Ch_10._Sorting_and_Search</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="Q1 01 Is Unique.fs" />
-    <Compile Include="Q1 07 Rotate Matrix.fs" />
+    <Compile Include="Q10 01 Sorted Merge.fs" />
   </ItemGroup>
 
   <ItemGroup>
