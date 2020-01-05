@@ -18,7 +18,7 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "ctci.Contracts", "ctci.Cont
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Ch 01. Arrays and Strings", "Ch 01. Arrays and Strings\Ch 01. Arrays and Strings.fsproj", "{2B3E758F-CC34-4B21-A294-164841E3173E}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Ch 10. Sorting and Search", "Ch 10. Sorting and Searcing\Ch 10. Sorting and Search.fsproj", "{32019E42-0879-419F-A366-02ABD24D442B}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Ch 10. Sorting and Search", "Ch 10. Sorting and Searching\Ch 10. Sorting and Searching.fsproj", "{32019E42-0879-419F-A366-02ABD24D442B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
