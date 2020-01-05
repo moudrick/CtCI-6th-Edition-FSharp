@@ -1,4 +1,4 @@
-﻿namespace Ch_10._Sorting_and_Search
+﻿namespace Ch_10._Sorting_and_Searching
 
 open ctci.Contracts
 

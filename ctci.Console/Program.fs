@@ -1,6 +1,6 @@
 ﻿open ctci.Contracts
 open Ch_01._Arrays_and_Strings
-open Ch_10._Sorting_and_Search
+open Ch_10._Sorting_and_Searching
 
 [<EntryPoint>]
 let main argv =
