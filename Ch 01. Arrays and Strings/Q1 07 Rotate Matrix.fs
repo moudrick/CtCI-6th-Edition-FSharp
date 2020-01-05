@@ -26,7 +26,6 @@ type ``Q1 07 - Rotate Matrix``() =
 
                 // top -> right
                 matrix.[i, last] <- top // right <- saved top
-        |> ignore
 
     let rotateMatrixByRevTranspose m = m |> List.rev |> List.transpose
 
@@ -61,4 +60,3 @@ type ``Q1 07 - Rotate Matrix``() =
         AssortedMethods.PrintIntListListMatrix (rotateMatrixByRevTranspose matrix)
         printfn ""
         AssortedMethods.PrintIntListListMatrix (rotateMatrixByRevCustomTranspose matrix)
-

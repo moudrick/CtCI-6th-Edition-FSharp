@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>Ch_05._Bit_Manipulation</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="Q05 01 Insertion.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ctci.Contracts\ctci.Contracts.fsproj" />
+    <ProjectReference Include="..\ctci.Library\ctci.Library.fsproj" />
+  </ItemGroup>
+
+</Project>
