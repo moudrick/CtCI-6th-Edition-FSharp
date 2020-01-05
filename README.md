@@ -52,7 +52,7 @@
 - [ ] 4.12 - Paths with Sum
 
 #### Chapter 5
-- [ ] 5.1 - Insertion
+- [x] 5.1 - Insertion
 - [ ] 5.2 - Binary to String
 - [ ] 5.3 - Flip Bit To Win
 - [ ] 5.4 - Next Number

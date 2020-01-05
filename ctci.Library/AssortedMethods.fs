@@ -33,3 +33,11 @@ module AssortedMethods =
             for j in 0 .. (matrix.[i] |> List.length) - 1 do
                 matrix.[i].[j] |> PrintMatrixItem
             printfn ""
+
+    let toFullBinaryString a =
+        let rec toBin value len =
+            match len > 1 with
+            | true -> toBin (value >>> 1) (len - 1)
+            | _ -> ""
+            |> sprintf "%s%c" <| ("01".[value &&& 1])
+        toBin a 32
