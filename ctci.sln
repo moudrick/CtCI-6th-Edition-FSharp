@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "ctci.Library", "ctci.Library\ctci.Library.fsproj", "{8AEF6781-0C19-4069-BFEA-7D6B955FF704}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "ctci.Library", "ctci.Library\ctci.Library.fsproj", "{8AEF6781-0C19-4069-BFEA-7D6B955FF704}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Baseline", "Baseline", "{3AD9202C-AE28-4B77-8BA8-2F93E767DE93}"
 	ProjectSection(SolutionItems) = preProject
@@ -12,11 +12,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Baseline", "Baseline", "{3A
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Questions", "Questions", "{0C6F0C29-F67E-4382-9E01-EBE71E2002BE}"
 EndProject
-Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "ctci.Console", "ctci.Console\ctci.Console.fsproj", "{450E2D4C-E1AF-4856-9FBE-7A6341A46907}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "ctci.Console", "ctci.Console\ctci.Console.fsproj", "{450E2D4C-E1AF-4856-9FBE-7A6341A46907}"
 EndProject
-Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "ctci.Contracts", "ctci.Contracts\ctci.Contracts.fsproj", "{C21A4F46-F60C-47B3-9CD8-4AEB9B1C9923}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "ctci.Contracts", "ctci.Contracts\ctci.Contracts.fsproj", "{C21A4F46-F60C-47B3-9CD8-4AEB9B1C9923}"
 EndProject
-Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Ch 01. Arrays and Strings", "Ch 01. Arrays and Strings\Ch 01. Arrays and Strings.fsproj", "{2B3E758F-CC34-4B21-A294-164841E3173E}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Ch 01. Arrays and Strings", "Ch 01. Arrays and Strings\Ch 01. Arrays and Strings.fsproj", "{2B3E758F-CC34-4B21-A294-164841E3173E}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Ch 10. Sorting and Search", "Ch 10. Sorting and Searcing\Ch 10. Sorting and Search.fsproj", "{32019E42-0879-419F-A366-02ABD24D442B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -40,6 +42,10 @@ Global
 		{2B3E758F-CC34-4B21-A294-164841E3173E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2B3E758F-CC34-4B21-A294-164841E3173E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2B3E758F-CC34-4B21-A294-164841E3173E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32019E42-0879-419F-A366-02ABD24D442B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32019E42-0879-419F-A366-02ABD24D442B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32019E42-0879-419F-A366-02ABD24D442B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32019E42-0879-419F-A366-02ABD24D442B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -49,6 +55,7 @@ Global
 		{450E2D4C-E1AF-4856-9FBE-7A6341A46907} = {3AD9202C-AE28-4B77-8BA8-2F93E767DE93}
 		{C21A4F46-F60C-47B3-9CD8-4AEB9B1C9923} = {3AD9202C-AE28-4B77-8BA8-2F93E767DE93}
 		{2B3E758F-CC34-4B21-A294-164841E3173E} = {0C6F0C29-F67E-4382-9E01-EBE71E2002BE}
+		{32019E42-0879-419F-A366-02ABD24D442B} = {0C6F0C29-F67E-4382-9E01-EBE71E2002BE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1DCE92E9-06E9-4B99-AB0D-E96318853900}

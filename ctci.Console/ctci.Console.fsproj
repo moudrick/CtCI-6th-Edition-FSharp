@@ -10,8 +10,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Ch 01. Arrays and Strings\Ch 01. Arrays and Strings.fsproj" />
     <ProjectReference Include="..\ctci.Library\ctci.Library.fsproj" />
+    <ProjectReference Include="..\Ch 01. Arrays and Strings\Ch 01. Arrays and Strings.fsproj" />
+    <ProjectReference Include="..\Ch 10. Sorting and Searcing\Ch 10. Sorting and Search.fsproj" />
   </ItemGroup>
 
 </Project>

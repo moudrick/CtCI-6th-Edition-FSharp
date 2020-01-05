@@ -1,4 +1,4 @@
-﻿namespace Chapter01
+﻿namespace Ch_01._Arrays_and_Strings
 
 open ctci.Contracts
 open ctci.Library
@@ -62,4 +62,3 @@ type ``Q1 07 - Rotate Matrix``() =
         printfn ""
         AssortedMethods.PrintIntListListMatrix (rotateMatrixByRevCustomTranspose matrix)
 
-        |> ignore

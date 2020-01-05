@@ -1,14 +1,17 @@
 ﻿open ctci.Contracts
-open Chapter01
+open Ch_01._Arrays_and_Strings
+open Ch_10._Sorting_and_Search
 
 [<EntryPoint>]
 let main argv =
 
     let chapters : Question [] [] = [|
         [| 
-            new ``Q1 01 - Is Unique``(); 
-            new ``Q1 07 - Rotate Matrix``();
-        |];
+            new ``Q1 01 - Is Unique``() 
+            new ``Q1 07 - Rotate Matrix``()
+        |]; [|
+            new ``Q10 01 - Sorted Merge``()
+        |]
     |]
 
     for chapter in chapters do
