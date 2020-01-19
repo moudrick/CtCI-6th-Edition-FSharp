@@ -8,7 +8,7 @@ let main argv =
 
     let chapters : Question [] [] = [|
         [| 
-            ``Q1 01 - Is Unique``() 
+            Ch_01._Arrays_and_Strings.``Q1 01 - Is Unique``.``Q1 01 - Is Unique``() 
             ``Q1 07 - Rotate Matrix``()
         |]; [|
             ``Q05 01 - Insertion``()
