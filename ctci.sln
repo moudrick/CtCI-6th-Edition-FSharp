@@ -22,6 +22,8 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Ch 10. Sorting and Searchin
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Ch 05. Bit Manipulation", "Ch 05. Bit Manipulation\Ch 05. Bit Manipulation.fsproj", "{07FAD3BD-2406-488D-B3C1-7035C8766B11}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "ctci.Properties", "ctci.Properties\ctci.Properties.fsproj", "{3E8C624D-0778-4DBE-AAD6-1F872F474E4A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -52,6 +54,10 @@ Global
 		{07FAD3BD-2406-488D-B3C1-7035C8766B11}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{07FAD3BD-2406-488D-B3C1-7035C8766B11}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{07FAD3BD-2406-488D-B3C1-7035C8766B11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E8C624D-0778-4DBE-AAD6-1F872F474E4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E8C624D-0778-4DBE-AAD6-1F872F474E4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E8C624D-0778-4DBE-AAD6-1F872F474E4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E8C624D-0778-4DBE-AAD6-1F872F474E4A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -63,6 +69,7 @@ Global
 		{2B3E758F-CC34-4B21-A294-164841E3173E} = {0C6F0C29-F67E-4382-9E01-EBE71E2002BE}
 		{32019E42-0879-419F-A366-02ABD24D442B} = {0C6F0C29-F67E-4382-9E01-EBE71E2002BE}
 		{07FAD3BD-2406-488D-B3C1-7035C8766B11} = {0C6F0C29-F67E-4382-9E01-EBE71E2002BE}
+		{3E8C624D-0778-4DBE-AAD6-1F872F474E4A} = {3AD9202C-AE28-4B77-8BA8-2F93E767DE93}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1DCE92E9-06E9-4B99-AB0D-E96318853900}

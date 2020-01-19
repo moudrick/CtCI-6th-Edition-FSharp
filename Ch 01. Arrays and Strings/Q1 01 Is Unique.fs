@@ -1,11 +1,9 @@
-﻿namespace Ch_01._Arrays_and_Strings
+﻿namespace Ch_01._Arrays_and_Strings.``Q1 01 - Is Unique``
 
 open ctci.Contracts
 
-type ``Q1 01 - Is Unique``() =
-    inherit Question()
-
-    let IsUniqueCharsEnglishLower (str : string) : bool =
+module EnglishLower =
+    let IsUniqueChars (str : string) : bool =
         seq {
             if (str.Length > 26)
                 then yield false
@@ -20,7 +18,8 @@ type ``Q1 01 - Is Unique``() =
             yield true
         } |> Seq.head
 
-    let IsUniqueCharsEnglishLower_NoMutable (str : string) : bool =
+module EnglishLower_NoMutable =
+    let IsUniqueChars (str : string) : bool =
         seq {
             if (str.Length > 26) 
                 then yield false
@@ -39,7 +38,8 @@ type ``Q1 01 - Is Unique``() =
                 |> Seq.tryHead |> Option.toList)
         } |> Seq.tryHead |> defaultArg <| true
 
-    let IsUniqueChars_ExtendedAscii (str : string) : bool =
+module ExtendedAscii =
+    let IsUniqueChars (str : string) : bool =
         seq {
             if (str.Length > 256) 
                 then yield false
@@ -53,16 +53,18 @@ type ``Q1 01 - Is Unique``() =
             yield true
         } |> Seq.head
 
+module GenericHashSet =
     let IsUniqueChars str =
-        seq {
-            let hashset = new System.Collections.Generic.HashSet<char>()
-            for c in str do
-                if (hashset.Contains(c)) then yield false
-                hashset.Add(c) |> ignore
-            yield true
-        } |> Seq.head
+            seq {
+                let hashset = new System.Collections.Generic.HashSet<char>()
+                for c in str do
+                    if (hashset.Contains(c)) then yield false
+                    hashset.Add(c) |> ignore
+                yield true
+            } |> Seq.head
 
-    let IsUniqueChars_ImmutableSet str =
+module ImmutableSet =
+    let IsUniqueChars str =
         seq {
             yield! str |> Seq.scan
                 (fun (hashset : Set<char> option) (c : char) ->
@@ -75,10 +77,14 @@ type ``Q1 01 - Is Unique``() =
             |> Seq.tryHead |> Option.toList
         } |> Seq.tryHead |> defaultArg <| true
 
-    let IsUniqueChars_ZipWithSort str =
+module ZipWithSort =
+    let IsUniqueChars str =
         let differentPairs s = Seq.reduce (&&) (Seq.map2 (<>) s (Seq.tail s))
         let isUnique = differentPairs << Seq.sort
         isUnique str
+
+type ``Q1 01 - Is Unique``() =
+    inherit Question()
 
     override this.Run() =
 
@@ -88,7 +94,7 @@ type ``Q1 01 - Is Unique``() =
 
         for word in words do
             printfn "%s: %b %b %b %b %b %b" word
-                (IsUniqueCharsEnglishLower word) (IsUniqueCharsEnglishLower_NoMutable word)
-                (IsUniqueChars word) (IsUniqueChars_ImmutableSet word)
-                (IsUniqueChars_ZipWithSort word) (IsUniqueChars_ExtendedAscii word)
+                (EnglishLower.IsUniqueChars word) (EnglishLower_NoMutable.IsUniqueChars word)
+                (GenericHashSet.IsUniqueChars word) (ImmutableSet.IsUniqueChars word)
+                (ZipWithSort.IsUniqueChars word) (ExtendedAscii.IsUniqueChars word)
 
