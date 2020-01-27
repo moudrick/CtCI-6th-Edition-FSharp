@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <Compile Include="Ch_01._Arrays_and_Strings.``Q1 01 - Is Unique``.fs" />
+    <Compile Include="Ch_01._Arrays_and_Strings.``Q1 07 - Rotate Matrix``.fs" />
   </ItemGroup>
 
   <ItemGroup>

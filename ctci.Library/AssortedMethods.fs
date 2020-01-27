@@ -41,3 +41,8 @@ module AssortedMethods =
             | _ -> ""
             |> sprintf "%s%c" <| ("01".[value &&& 1])
         toBin a 32
+
+    let toIntListList matrix = 
+        List.init 
+            (matrix |> Array2D.length1)
+            (fun i -> List.ofArray matrix.[i, *] )

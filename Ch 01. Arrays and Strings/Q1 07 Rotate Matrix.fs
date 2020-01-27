@@ -51,8 +51,8 @@ type Question() =
         AssortedMethods.PrintMatrix matrix
 
         printfn ""
-        let toIntListList = List.init (matrix |> Array2D.length1) (fun i -> List.ofArray matrix.[i, *] )
-        AssortedMethods.PrintIntListListMatrix (Sln.ByRevTranspose.rotate toIntListList)
+        let intListList = matrix |> AssortedMethods.toIntListList
+        AssortedMethods.PrintIntListListMatrix (Sln.ByRevTranspose.rotate intListList)
 
         printfn "---------------------------------"
         let matrix = AssortedMethods.RandomIntListListMatrix size size 0 9
