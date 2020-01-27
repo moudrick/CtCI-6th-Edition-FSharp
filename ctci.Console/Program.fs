@@ -1,19 +1,14 @@
-﻿open ctci.Contracts
-open Ch_01._Arrays_and_Strings
-open Ch_05._Bit_Manipulation
-open Ch_10._Sorting_and_Searching
-
-[<EntryPoint>]
+﻿[<EntryPoint>]
 let main argv =
 
-    let chapters : Question [] [] = [|
+    let chapters : ctci.Contracts.Question [] [] = [|
         [| 
-            Ch_01._Arrays_and_Strings.``Q1 01 - Is Unique``.``Q1 01 - Is Unique``() 
-            ``Q1 07 - Rotate Matrix``()
+            Ch_01._Arrays_and_Strings.``Q1 01 - Is Unique``.Question() 
+            Ch_01._Arrays_and_Strings.``Q1 07 - Rotate Matrix``.Question()
         |]; [|
-            ``Q05 01 - Insertion``()
+            Ch_05._Bit_Manipulation.``Q05 01 - Insertion``.Question()
         |]; [|
-            ``Q10 01 - Sorted Merge``()
+            Ch_10._Sorting_and_Searching.``Q10 01 - Sorted Merge``.Question()
         |]
     |]
 
@@ -24,6 +19,6 @@ let main argv =
                 printfn "// Executing: '%s'" q.Name 
                 printfn "// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----"
 
-                q.Run()
+                q.DemoRun()
 
     Unchecked.defaultof<int>

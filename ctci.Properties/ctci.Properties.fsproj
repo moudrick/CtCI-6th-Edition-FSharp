@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="Properties.fs" />
+    <Compile Include="Ch_01._Arrays_and_Strings.``Q1 01 - Is Unique``.fs" />
   </ItemGroup>
 
   <ItemGroup>

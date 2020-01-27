@@ -1,42 +1,44 @@
-﻿namespace Ch_01._Arrays_and_Strings
+﻿namespace Ch_01._Arrays_and_Strings.``Q1 07 - Rotate Matrix``
 
-open ctci.Contracts
 open ctci.Library
 
-type ``Q1 07 - Rotate Matrix``() =
-    inherit Question()
+module Sln =
+    let rotate (matrix : int[,]) n =
+            for layer in 0 .. n / 2 - 1 do
+                let first = layer
+                let last = n - 1 - layer
 
-    let Rotate (matrix : int[,]) (n) =
-        for layer in 0 .. n / 2 - 1 do
-            let first = layer
-            let last = n - 1 - layer
+                for i in first .. last - 1 do
+                    let offset = i - first
+                    let top = matrix.[first, i] // save top
 
-            for i in first .. last - 1 do
-                let offset = i - first
-                let top = matrix.[first, i] // save top
+                    // left -> top
+                    matrix.[first, i] <- matrix.[last - offset, first]
 
-                // left -> top
-                matrix.[first, i] <- matrix.[last - offset, first]
+                    // bottom -> left
+                    matrix.[last - offset, first] <- matrix.[last, last - offset]
 
-                // bottom -> left
-                matrix.[last - offset, first] <- matrix.[last, last - offset]
+                    // right -> bottom
+                    matrix.[last, last - offset] <- matrix.[i, last]
 
-                // right -> bottom
-                matrix.[last, last - offset] <- matrix.[i, last]
+                    // top -> right
+                    matrix.[i, last] <- top // right <- saved top
 
-                // top -> right
-                matrix.[i, last] <- top // right <- saved top
+    module ByRevTranspose = 
+        let rotate m = m |> List.rev |> List.transpose
 
-    let rotateMatrixByRevTranspose m = m |> List.rev |> List.transpose
+    module ByRevCustomTranspose =
+        let rotate matrix = 
+            let rec transpose M = 
+                match M with 
+                | []::_ -> []
+                | _ -> List.map List.head M :: transpose (List.map List.tail M)
+            matrix |> List.rev |> transpose
 
-    let rotateMatrixByRevCustomTranspose matrix = 
-        let rec transpose M = 
-            match M with 
-            | []::_ -> []
-            | _ -> List.map List.head M :: transpose (List.map List.tail M)
-        matrix |> List.rev |> transpose
-
-    override this.Run() =
+type Question() =
+    inherit ctci.Contracts.Question()
+ 
+    override this.DemoRun() =
 
         let size = 3
 
@@ -44,19 +46,19 @@ type ``Q1 07 - Rotate Matrix``() =
        
         AssortedMethods.PrintMatrix matrix
 
-        Rotate matrix size
+        Sln.rotate matrix size
         printfn ""
         AssortedMethods.PrintMatrix matrix
 
         printfn ""
         let toIntListList = List.init (matrix |> Array2D.length1) (fun i -> List.ofArray matrix.[i, *] )
-        AssortedMethods.PrintIntListListMatrix (rotateMatrixByRevTranspose toIntListList)
+        AssortedMethods.PrintIntListListMatrix (Sln.ByRevTranspose.rotate toIntListList)
 
         printfn "---------------------------------"
         let matrix = AssortedMethods.RandomIntListListMatrix size size 0 9
         printfn ""
         AssortedMethods.PrintIntListListMatrix matrix
         printfn ""
-        AssortedMethods.PrintIntListListMatrix (rotateMatrixByRevTranspose matrix)
+        AssortedMethods.PrintIntListListMatrix (Sln.ByRevTranspose.rotate matrix)
         printfn ""
-        AssortedMethods.PrintIntListListMatrix (rotateMatrixByRevCustomTranspose matrix)
+        AssortedMethods.PrintIntListListMatrix (Sln.ByRevCustomTranspose.rotate matrix)
