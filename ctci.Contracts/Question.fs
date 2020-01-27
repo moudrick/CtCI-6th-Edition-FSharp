@@ -2,5 +2,5 @@
 
 [<AbstractClass>]
 type Question() =
-    abstract member Run : unit -> unit
+    abstract member DemoRun : unit -> unit
     member this.Name with get() = this.GetType().ToString()

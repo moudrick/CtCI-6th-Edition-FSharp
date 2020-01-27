@@ -19,30 +19,29 @@ type IsUniqueGen() =
 [< Property(Verbose = true, Arbitrary = [| typeof<IsUniqueGen> |]) >]
 let ``EnglishLower solution works properly``
     (word : string) (isUnique : bool) =
-    EnglishLower.IsUniqueChars word = isUnique
+    Sln.IsUniqueChars word = isUnique
 
 [< Property(Verbose = true, Arbitrary = [| typeof<IsUniqueGen> |]) >]
 let ``EnglishLower_NoMutable solution works properly``
     (word : string) (isUnique : bool) =
-    EnglishLower_NoMutable.IsUniqueChars word = isUnique
+    Sln.NoMutable.IsUniqueChars word = isUnique
 
 [< Property(Verbose = true, Arbitrary = [| typeof<IsUniqueGen> |]) >]
 let ``ExtendedAscii solution works properly``
     (word : string) (isUnique : bool) =
-    ExtendedAscii.IsUniqueChars word = isUnique
+    Sln.ExtendedAscii.IsUniqueChars word = isUnique
 
 [< Property(Verbose = true, Arbitrary = [| typeof<IsUniqueGen> |]) >]
 let ``GenericHashSet solution works properly``
     (word : string) (isUnique : bool) =
-    GenericHashSet.IsUniqueChars word = isUnique
+    Sln.GenericHashSet.IsUniqueChars word = isUnique
 
 [< Property(Verbose = true, Arbitrary = [| typeof<IsUniqueGen> |]) >]
 let ``ImmutableSet solution works properly``
     (word : string) (isUnique : bool) =
-    ImmutableSet.IsUniqueChars word = isUnique
+    Sln.ImmutableSet.IsUniqueChars word = isUnique
 
 [< Property(Verbose = true, Arbitrary = [| typeof<IsUniqueGen> |]) >]
 let ``ZipWithSort solution works properly``
     (word : string) (isUnique : bool) =
-    ZipWithSort.IsUniqueChars word = isUnique
-
+    Sln.ZipWithSort.IsUniqueChars word = isUnique
