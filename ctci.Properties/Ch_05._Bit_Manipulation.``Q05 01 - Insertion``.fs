@@ -25,7 +25,7 @@ type CasesGenArb() =
         cases |> Gen.elements |> Arb.fromGen
 
 [< Property(Verbose = true, Arbitrary = [| typeof<CasesGenArb> |]) >]
-let ``Sln.IsUniqueChars works properly``
+let ``Sln.updateBits works properly``
     (case : Case) =
 
     Sln.updateBits case.n case.m case.i case.j = case.expected
