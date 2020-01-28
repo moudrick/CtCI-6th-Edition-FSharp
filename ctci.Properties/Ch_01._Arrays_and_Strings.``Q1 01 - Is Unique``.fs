@@ -22,31 +22,36 @@ type IsUniqueGenArb() =
         isUnique |> Seq.concat |> Gen.elements |> Arb.fromGen
 
 [< Property(Verbose = true, Arbitrary = [| typeof<IsUniqueGenArb> |]) >]
-let ``Sln.IsUniqueChars works properly``
+let ``Sln.isUniqueChars works properly``
     (word : string) (isUnique : bool) =
-    Sln.IsUniqueChars word = isUnique
+    Sln.isUniqueChars word = isUnique
 
 [< Property(Verbose = true, Arbitrary = [| typeof<IsUniqueGenArb> |]) >]
-let ``Sln.NoMutable.IsUniqueChars works properly``
+let ``Sln.NoMutable.isUniqueChars works properly``
     (word : string) (isUnique : bool) =
-    Sln.NoMutable.IsUniqueChars word = isUnique
+
+    Sln.NoMutable.isUniqueChars word = isUnique
 
 [< Property(Verbose = true, Arbitrary = [| typeof<IsUniqueGenArb> |]) >]
-let ``Sln.ExtendedAscii.IsUniqueChars works properly``
+let ``Sln.ExtendedAscii.isUniqueChars works properly``
     (word : string) (isUnique : bool) =
-    Sln.ExtendedAscii.IsUniqueChars word = isUnique
+
+    Sln.ExtendedAscii.isUniqueChars word = isUnique
 
 [< Property(Verbose = true, Arbitrary = [| typeof<IsUniqueGenArb> |]) >]
-let ``Sln.GenericHashSet.IsUniqueChars solution works properly``
+let ``Sln.GenericHashSet.isUniqueChars solution works properly``
     (word : string) (isUnique : bool) =
-    Sln.GenericHashSet.IsUniqueChars word = isUnique
+
+    Sln.GenericHashSet.isUniqueChars word = isUnique
 
 [< Property(Verbose = true, Arbitrary = [| typeof<IsUniqueGenArb> |]) >]
-let ``Sln.ImmutableSet.IsUniqueChars works properly``
+let ``Sln.ImmutableSet.isUniqueChars works properly``
     (word : string) (isUnique : bool) =
-    Sln.ImmutableSet.IsUniqueChars word = isUnique
+
+    Sln.ImmutableSet.isUniqueChars word = isUnique
 
 [< Property(Verbose = true, Arbitrary = [| typeof<IsUniqueGenArb> |]) >]
-let ``Sln.ZipWithSort.IsUniqueChars works properly``
+let ``Sln.ZipWithSort.isUniqueChars works properly``
     (word : string) (isUnique : bool) =
-    Sln.ZipWithSort.IsUniqueChars word = isUnique
+
+    Sln.ZipWithSort.isUniqueChars word = isUnique

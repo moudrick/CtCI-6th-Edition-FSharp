@@ -93,15 +93,18 @@ type ExpectedRotateIntListListGenArb() =
 [< Property(Verbose = true, Arbitrary = [| typeof<ExpectedRotateMatrixGenArb> |]) >]
 let ``Sln.rotate works properly``
     (matrix : int[,]) (expectedRotatedMatrix : int[,]) =
+
     matrix |> Sln.rotate <| Array2D.length1 matrix
     matrix = expectedRotatedMatrix
 
 [< Property(Verbose = true, Arbitrary = [| typeof<ExpectedRotateIntListListGenArb> |]) >]
 let ``Sln.ByRevTranspose.rotate works properly``
     (matrix : int list list) (expectedRotatedMatrix : int list list) =
+
     matrix |> Sln.ByRevTranspose.rotate = expectedRotatedMatrix
 
 [< Property(Verbose = true, Arbitrary = [| typeof<ExpectedRotateIntListListGenArb> |]) >]
 let ``Sln.ByRevCustomTranspose.rotate works properly``
     (matrix : int list list) (expectedRotatedMatrix : int list list) =
+
     matrix |> Sln.ByRevCustomTranspose.rotate = expectedRotatedMatrix
