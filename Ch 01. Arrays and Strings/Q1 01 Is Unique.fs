@@ -1,7 +1,7 @@
 ﻿namespace Ch_01._Arrays_and_Strings.``Q1 01 - Is Unique``
 
 module Sln =
-    let IsUniqueChars (str : string) : bool =
+    let isUniqueChars (str : string) : bool =
             seq {
                 if (str.Length > 26)
                     then yield false
@@ -17,7 +17,7 @@ module Sln =
             } |> Seq.head
 
     module NoMutable =
-        let IsUniqueChars str =
+        let isUniqueChars str =
             seq {
                 let length = str |> String.length
                 if (length > 26) 
@@ -38,7 +38,7 @@ module Sln =
             } |> Seq.tryHead |> defaultArg <| true
 
     module ExtendedAscii =
-        let IsUniqueChars (str : string) : bool =
+        let isUniqueChars (str : string) : bool =
             seq {
                 if (str.Length > 256) 
                     then yield false
@@ -53,7 +53,7 @@ module Sln =
             } |> Seq.head
 
     module GenericHashSet =
-        let IsUniqueChars str =
+        let isUniqueChars str =
             seq {
                 let hashset = new System.Collections.Generic.HashSet<char>()
                 for c in str do
@@ -63,7 +63,7 @@ module Sln =
             } |> Seq.head
 
     module ImmutableSet =
-        let IsUniqueChars str =
+        let isUniqueChars str =
             seq {
                 yield! str |> Seq.scan
                     (fun set c ->
@@ -77,7 +77,7 @@ module Sln =
             } |> Seq.tryHead |> defaultArg <| true
 
     module ZipWithSort =
-        let IsUniqueChars str =
+        let isUniqueChars str =
             let differentPairs s = Seq.reduce (&&) (Seq.map2 (<>) s (Seq.tail s))
             let isUnique = differentPairs << Seq.sort
             isUnique str
@@ -93,6 +93,6 @@ type Question() =
 
         for word in words do
             printfn "%s: %b %b %b %b %b %b" word
-                (Sln.IsUniqueChars word) (Sln.NoMutable.IsUniqueChars word)
-                (Sln.GenericHashSet.IsUniqueChars word) (Sln.ImmutableSet.IsUniqueChars word)
-                (Sln.ZipWithSort.IsUniqueChars word) (Sln.ExtendedAscii.IsUniqueChars word)
+                (Sln.isUniqueChars word) (Sln.NoMutable.isUniqueChars word)
+                (Sln.GenericHashSet.isUniqueChars word) (Sln.ImmutableSet.isUniqueChars word)
+                (Sln.ZipWithSort.isUniqueChars word) (Sln.ExtendedAscii.isUniqueChars word)
