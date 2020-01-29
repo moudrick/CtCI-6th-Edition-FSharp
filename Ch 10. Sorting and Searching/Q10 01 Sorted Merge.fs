@@ -29,13 +29,14 @@ module Sln =
         let merge a b countA countB =
             let rec mergeAtIndices a b (indexMerged, indexA, indexB) =
                 (* Merge a and b, starting from the last element in each *)
-                if (indexB >= 0 && indexA >= 0) then 
-                    let currentA = a |> Array.get <| indexA
-                    let currentB = b |> Array.get <| indexB
-                    let (current, newIndices) = 
-                        match (currentA > currentB) with // (* end of A is bigger than end of B *)
-                        | true -> (currentA, (indexMerged - 1, indexA - 1, indexB    )) 
-                        | _    -> (currentB, (indexMerged - 1, indexA    , indexB - 1))
+                if (indexB >= 0) then
+                    let (current, newIndices) =
+                        let currentB =       b |> Array.get <| indexB
+                        let currentA = lazy (a |> Array.get <| indexA)
+                        match (indexA >= 0) && (currentA.Force() > currentB) with // (* end of A is bigger than end of B *)
+                        | true -> (currentA.Value, (indexMerged - 1, indexA - 1, indexB    )) 
+                        | _    -> (currentB      , (indexMerged - 1, indexA    , indexB - 1))
+
                     a |> Array.set <| indexMerged <| current // copy element
                     mergeAtIndices a b newIndices // move indices
             mergeAtIndices a b ( 
