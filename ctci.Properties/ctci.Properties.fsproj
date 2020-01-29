@@ -10,11 +10,13 @@
     <Compile Include="Ch_01._Arrays_and_Strings.``Q1 01 - Is Unique``.fs" />
     <Compile Include="Ch_01._Arrays_and_Strings.``Q1 07 - Rotate Matrix``.fs" />
     <Compile Include="Ch_05._Bit_Manipulation.``Q05 01 - Insertion``.fs" />
+    <Compile Include="Ch_10._Sorting_and_Searching.``Q10 01 - Sorted Merge``.fs" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Ch 01. Arrays and Strings\Ch 01. Arrays and Strings.fsproj" />
     <ProjectReference Include="..\Ch 05. Bit Manipulation\Ch 05. Bit Manipulation.fsproj" />
+    <ProjectReference Include="..\Ch 10. Sorting and Searching\Ch 10. Sorting and Searching.fsproj" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="FsCheck" Version="2.14.0" />
