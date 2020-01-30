@@ -74,7 +74,7 @@ let ``Sln.NoMutable.merge works properly``
     case.a = expected
 
 [< Property(Verbose = true, Arbitrary = [| typeof<ExceptionalCasesGenArb> |]) >]
-let ``Sl.NoMutable.merge throws exception``
+let ``Sln.NoMutable.merge throws exception``
     (case : Case) (exc : System.Type) =
 
     lazy Xunit.Assert.Throws ( exc, 

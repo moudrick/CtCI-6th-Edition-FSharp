@@ -14,7 +14,7 @@ let main argv =
 
     for chapter in chapters do
         for q in chapter do
-            if (argv.Length = 0 || argv |> Array.exists (fun v -> q.Name.Contains v)) then
+            if (argv.Length = 0 || argv |> Array.exists q.Name.Contains) then
                 printf "\n\n"
                 printfn "// Executing: '%s'" q.Name 
                 printfn "// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----"
