@@ -2,9 +2,9 @@
 
 module AssortedMethods =
 
-    let private RandomIntNumbers = new System.Random()
+    let private randomIntNumbers = System.Random()
 
-    let RandomInt n = RandomIntNumbers.Next n
+    let RandomInt n = randomIntNumbers.Next n
     let RandomIntInRange min max = RandomInt (max + 1 - min) + min
 
     let RandomMatrix m n min max =
