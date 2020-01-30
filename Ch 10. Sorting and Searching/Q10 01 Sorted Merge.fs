@@ -33,9 +33,9 @@ module Sln =
                     let (current, newIndices) =
                         let currentB =       b |> Array.get <| indexB
                         let currentA = lazy (a |> Array.get <| indexA)
-                        match (indexA >= 0) && (currentA.Force() > currentB) with // (* end of A is bigger than end of B *)
-                        | true -> (currentA.Value, (indexMerged - 1, indexA - 1, indexB    )) 
-                        | _    -> (currentB      , (indexMerged - 1, indexA    , indexB - 1))
+                        if (indexA >= 0) && (currentA.Force() > currentB) (* end of A is bigger than end of B *)
+                        then (currentA.Value, (indexMerged - 1, indexA - 1, indexB    )) 
+                        else (currentB      , (indexMerged - 1, indexA    , indexB - 1))
 
                     a |> Array.set <| indexMerged <| current // copy element
                     mergeAtIndices a b newIndices // move indices
@@ -50,11 +50,11 @@ type Question() =
 
     override this.DemoRun() =
         let a = [| 2; 3; 4; 5; 6; 8; 10; 100; 0; 0; 0; 0; 0; 0 |]
-        let b = [| 1; 4; 7; 6; 7; 7 |];
+        let b = [| 1; 4; 6; 7; 7; 7 |];
         Sln.merge a b 8 6
         printfn "%A" a
 
         let a1 = [| 2; 3; 4; 5; 6; 8; 10; 100; 0; 0; 0; 0; 0; 0 |]
-        let b1 = [| 1; 4; 7; 6; 7; 7 |];
+        let b1 = [| 1; 4; 6; 7; 7; 7 |];
         Sln.NoMutable.merge a1 b1 8 6
         printfn "%A" a1
