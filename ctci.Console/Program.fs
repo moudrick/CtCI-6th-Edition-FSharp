@@ -3,7 +3,8 @@ let main argv =
 
     let chapters : ctci.Contracts.Question [] [] = [|
         [| 
-            Ch_01._Arrays_and_Strings.``Q1 01 - Is Unique``.Question() 
+            Ch_01._Arrays_and_Strings.``Q1 01 - Is Unique``.Question()
+            Ch_01._Arrays_and_Strings.``Q1 06 - String Compression``.Question()
             Ch_01._Arrays_and_Strings.``Q1 07 - Rotate Matrix``.Question()
         |]; [|
             Ch_05._Bit_Manipulation.``Q05 01 - Insertion``.Question()
