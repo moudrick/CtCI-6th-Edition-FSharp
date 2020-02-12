@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <Compile Include="Ch_01._Arrays_and_Strings.``Q1 01 - Is Unique``.fs" />
+    <Compile Include="Ch_01._Arrays_and_Strings.``Q1 06 - String Compression``.fs" />
     <Compile Include="Ch_01._Arrays_and_Strings.``Q1 07 - Rotate Matrix``.fs" />
     <Compile Include="Ch_05._Bit_Manipulation.``Q05 01 - Insertion``.fs" />
     <Compile Include="Ch_10._Sorting_and_Searching.``Q10 01 - Sorted Merge``.fs" />
