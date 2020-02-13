@@ -42,3 +42,9 @@ let ``Sln.Better.compress works properly``
     (case : Case) =
 
     Sln.Better.compress case.original = case.compressed
+
+[< Property(Verbose = true, Arbitrary = [| typeof<CasesGenArb> |]) >]
+let ``Sln.FoldrGroup.compress works properly``
+    (case : Case) =
+
+    Sln.FoldrGroup.compress case.original = case.compressed

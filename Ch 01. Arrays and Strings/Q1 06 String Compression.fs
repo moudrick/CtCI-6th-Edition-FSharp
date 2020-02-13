@@ -45,7 +45,7 @@ module Sln =
 
 
     module Better =
-        let compress (str : string) : string =
+        let compress str =
             seq {
                 let countCompression str =
                     let mutable compressedLength = 0
@@ -81,6 +81,27 @@ module Sln =
                 yield compressed.ToString()
             } |> Seq.head
 
+    module FoldrGroup =
+        let rec foldr f z a =
+            match a with
+            | [] -> z
+            | x :: xs -> f x (foldr f z xs)
+
+        let group s =
+            let rec loop = function  
+                | x :: xs, [] -> loop (xs, [x])                            // First element
+                | x :: xs, s :: ss when x = s -> loop (xs, s :: s :: ss)   // Same
+                | x :: xs, ss -> ss :: loop (xs, [x])                      // Different
+                | [], ss -> [ss]                                           // Terminate
+            loop (List.ofSeq s, [])
+
+        let compress str = 
+            let compressed = 
+                 match str with
+                    | "" -> ""
+                    | _ -> foldr (fun x acc -> sprintf "%c%i%s" (Seq.head x) (Seq.length x) acc) "" (group str)
+            Seq.minBy String.length [ str; compressed ]
+
 type Question() =
     inherit ctci.Contracts.Question()
 
@@ -92,3 +113,4 @@ type Question() =
        printfn "Compressed Bad: '%s'" (original |> Sln.Bad.compress) 
        printfn "Compressed: '%s'" (original |> Sln.compress)
        printfn "Compressed Better: '%s'" (original |> Sln.Better.compress)
+       printfn "Compressed FoldrGroup: '%s'" (original |> Sln.FoldrGroup.compress)
