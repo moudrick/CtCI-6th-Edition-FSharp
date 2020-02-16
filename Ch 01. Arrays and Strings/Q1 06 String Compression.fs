@@ -43,7 +43,6 @@ module Sln =
             then compressed.ToString() 
             else str
 
-
     module Better =
         let compress str =
             seq {
@@ -81,6 +80,37 @@ module Sln =
                 yield compressed.ToString()
             } |> Seq.head
 
+        module NoMutable =
+            let compress str =
+                let length = str |> String.length
+
+                let countCompression accStart getNext =
+                    let resetCount = 1
+                    let (_, accResult) = 
+                        seq [0 .. length - 1] 
+                        |> Seq.fold (fun (count, acc) i ->
+                            (* If next character is different than current, append this char to result.*)
+                            if (i + 1 >= length || str.[i] <> str.[i + 1])
+                            then (resetCount, getNext acc count i)
+                            else (1 + count, acc)
+                        ) (resetCount, accStart)
+                    accResult
+
+                let finalLength =
+                    countCompression 0 (fun acc count i -> acc + 1 + count.ToString().Length)
+
+                seq {
+                    if (finalLength >= length)
+                        then yield str
+
+                    let compressed = 
+                        countCompression
+                            (new StringBuilder(finalLength)) // initialize capacity
+                            (fun acc count i -> acc.Append(str.[i]).Append(count)) 
+
+                    yield compressed.ToString()
+                } |> Seq.head
+
     module FoldrGroup =
         let rec foldr f z a =
             match a with
@@ -99,7 +129,8 @@ module Sln =
             let compressed = 
                  match str with
                     | "" -> ""
-                    | _ -> foldr (fun x acc -> sprintf "%c%i%s" (Seq.head x) (Seq.length x) acc) "" (group str)
+                    | _ -> 
+                       foldr (fun x acc -> sprintf "%c%i%s" (Seq.head x) (Seq.length x) acc) "" (group str)
             Seq.minBy String.length [ str; compressed ]
 
 type Question() =
@@ -113,4 +144,5 @@ type Question() =
        printfn "Compressed Bad: '%s'" (original |> Sln.Bad.compress) 
        printfn "Compressed: '%s'" (original |> Sln.compress)
        printfn "Compressed Better: '%s'" (original |> Sln.Better.compress)
+       printfn "Compressed Better with no mutable: '%s'" (original |> Sln.Better.NoMutable.compress)
        printfn "Compressed FoldrGroup: '%s'" (original |> Sln.FoldrGroup.compress)

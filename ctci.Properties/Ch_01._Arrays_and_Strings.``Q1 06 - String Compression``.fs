@@ -4,6 +4,7 @@
 
 open FsCheck
 open FsCheck.Xunit
+open Swensen.Unquote
 
 open Ch_01._Arrays_and_Strings.``Q1 06 - String Compression``
 
@@ -29,22 +30,28 @@ type CasesGenArb() =
 let ``Sln.Bad.compress works properly``
     (case : Case) =
 
-    Sln.Bad.compress case.original = case.compressed
+    case.compressed =! Sln.Bad.compress case.original
 
 [< Property(Verbose = true, Arbitrary = [| typeof<CasesGenArb> |]) >]
 let ``Sln.compress works properly``
     (case : Case) =
 
-    Sln.compress case.original = case.compressed
+    case.compressed =! Sln.compress case.original
 
 [< Property(Verbose = true, Arbitrary = [| typeof<CasesGenArb> |]) >]
 let ``Sln.Better.compress works properly``
     (case : Case) =
 
-    Sln.Better.compress case.original = case.compressed
+    case.compressed =! Sln.Better.compress case.original
+
+[< Property(Verbose = true, Arbitrary = [| typeof<CasesGenArb> |]) >]
+let ``Sln.Better.NoMutable.compress works properly``
+    (case : Case) =
+
+    case.compressed =! Sln.Better.NoMutable.compress case.original
 
 [< Property(Verbose = true, Arbitrary = [| typeof<CasesGenArb> |]) >]
 let ``Sln.FoldrGroup.compress works properly``
     (case : Case) =
 
-    Sln.FoldrGroup.compress case.original = case.compressed
+    case.compressed =! Sln.FoldrGroup.compress case.original
