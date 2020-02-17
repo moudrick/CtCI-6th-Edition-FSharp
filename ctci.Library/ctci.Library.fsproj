@@ -6,6 +6,8 @@
 
   <ItemGroup>
     <Compile Include="AssortedMethods.fs" />
+    <Compile Include="TreeNode.fs" />
+    <Compile Include="BTreePrinter.fs" />
   </ItemGroup>
 
 </Project>

@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>Ch_04._Trees_and_Graphs</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Q04 Introduction.fs" />
+    <Compile Include="Q04 02 Minimal Tree.fs" />
+    <Compile Include="Q04 06 Successor.fs" />
+    <Compile Include="Q04 04 Check Balanced.fs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ctci.Contracts\ctci.Contracts.fsproj" />
+    <ProjectReference Include="..\ctci.Library\ctci.Library.fsproj" />
+  </ItemGroup>
+</Project>
