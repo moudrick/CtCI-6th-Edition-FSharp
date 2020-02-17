@@ -14,6 +14,7 @@
     <ProjectReference Include="..\Ch 01. Arrays and Strings\Ch 01. Arrays and Strings.fsproj" />
     <ProjectReference Include="..\Ch 05. Bit Manipulation\Ch 05. Bit Manipulation.fsproj" />
     <ProjectReference Include="..\Ch 10. Sorting and Searching\Ch 10. Sorting and Searching.fsproj" />
+    <ProjectReference Include="..\Ch 04. Trees and Graphs\Ch 04. Trees and Graphs.fsproj" />
   </ItemGroup>
 
 </Project>
