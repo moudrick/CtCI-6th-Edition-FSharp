@@ -9,7 +9,7 @@ module Traversals =
             node |> visit
             inOrderTraversal visit node.right
 
-    let rec preOrderTraversal visit node = 
+    let rec preOrderTraversal visit node =
         if (node <> TreeNode.tip) then
             visit node
             preOrderTraversal visit node.left
