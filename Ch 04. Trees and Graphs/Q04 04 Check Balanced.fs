@@ -34,17 +34,6 @@ module Sln =
                         if (abs heightDiff > 1) 
                         then ErrorUp // Found error -> pass it back
                         else Height (1 + (max leftHeight rightHeight))
-                (*
-                let leftHeight = checkHeight root.left
-                if (leftHeight = ErrorUp) then ErrorUp else // Propagate error up
-
-                let rightHeight = checkHeight root.right
-                if (rightHeight = ErrorUp) then ErrorUp else // Propagate error up
-
-                let heightDiff = leftHeight - rightHeight
-                if (abs heightDiff > 1) then ErrorUp // Found error -> pass it back
-                else 1 + max leftHeight rightHeight
-                *)
 
         let isBalanced root = checkHeight root <> ErrorUp
 
@@ -57,7 +46,7 @@ type Question() =
         let root = TreeNode.createMinimalBST array
         printfn "Root? %i" root.data
         printfn "Is balanced? %b" (Sln.isBalanced root)
-        
+
         // Could be balanced, actually, but it's very unlikely...
         let unbalanced = new TreeNode 10
         for i in 0 .. 9 do

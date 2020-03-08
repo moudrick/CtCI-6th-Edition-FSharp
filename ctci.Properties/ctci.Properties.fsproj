@@ -1,21 +1,21 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
-
     <IsPackable>false</IsPackable>
   </PropertyGroup>
-
   <ItemGroup>
     <Compile Include="Ch_01._Arrays_and_Strings.``Q1 01 - Is Unique``.fs" />
     <Compile Include="Ch_01._Arrays_and_Strings.``Q1 06 - String Compression``.fs" />
     <Compile Include="Ch_01._Arrays_and_Strings.``Q1 07 - Rotate Matrix``.fs" />
+    <Compile Include="Ch_04._Trees_and_Graphs.``Q04 - Introduction``.fs" />
+    <Compile Include="Ch_04._Trees_and_Graphs.``Q04 04 - Check Balanced``.fs" />
     <Compile Include="Ch_05._Bit_Manipulation.``Q05 01 - Insertion``.fs" />
     <Compile Include="Ch_10._Sorting_and_Searching.``Q10 01 - Sorted Merge``.fs" />
+    <Compile Include="Library.TreeNode.fs" />
   </ItemGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\Ch 01. Arrays and Strings\Ch 01. Arrays and Strings.fsproj" />
+    <ProjectReference Include="..\Ch 04. Trees and Graphs\Ch 04. Trees and Graphs.fsproj" />
     <ProjectReference Include="..\Ch 05. Bit Manipulation\Ch 05. Bit Manipulation.fsproj" />
     <ProjectReference Include="..\Ch 10. Sorting and Searching\Ch 10. Sorting and Searching.fsproj" />
   </ItemGroup>
@@ -25,11 +25,9 @@
     <PackageReference Include="xunit.abstractions" Version="2.0.3" />
     <PackageReference Include="xunit.extensibility.execution" Version="2.4.0" />
     <PackageReference Include="xunit.extensibility.core" Version="2.4.0" />
-
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.2.0" />
     <PackageReference Include="xunit" Version="2.4.0" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.0" />
-
     <PackageReference Include="Unquote" Version="4.0.0" />
   </ItemGroup>
 </Project>

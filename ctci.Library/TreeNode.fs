@@ -43,9 +43,9 @@ type TreeNode =
 
 module TreeNode =
     let rec height (this : TreeNode) =
-        let leftHeight = if (this.left <> TreeNode.tip) then (height this.left) else 0
-        let rightHeight = if (this.right <> TreeNode.tip) then (height this.right) else 0
-        1 + max leftHeight rightHeight
+        match this with
+        | _ when (this <> TreeNode.tip) -> 1 + max (height this.left) (height this.right)
+        | _ -> 0
 
     let rec isBST (this : TreeNode) =
         match this with
