@@ -69,7 +69,7 @@ let treePairs = seq {
     n7.left <- n16
     yield (n1, true)
 
-    yield ([| 1; 2; 3; 4; 5; 6; 7; 8; 9; 10 |] |> TreeNode.createMinimalBST, true)
+    yield ([| 1 .. 10 |] |> TreeNode.createMinimalBST, true)
 
     let unbalanced array =
         let unbalanced = new TreeNode 10
