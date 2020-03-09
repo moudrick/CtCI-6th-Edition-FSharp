@@ -6,8 +6,8 @@
   <ItemGroup>
     <Compile Include="Q04 Introduction.fs" />
     <Compile Include="Q04 02 Minimal Tree.fs" />
-    <Compile Include="Q04 06 Successor.fs" />
     <Compile Include="Q04 04 Check Balanced.fs" />
+    <Compile Include="Q04 06 Successor.fs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ctci.Contracts\ctci.Contracts.fsproj" />

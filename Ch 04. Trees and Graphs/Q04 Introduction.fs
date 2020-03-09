@@ -31,7 +31,7 @@ type Question() =
             if (node <> TreeNode.tip)
             then printfn "%i" (node.data)
 
-        let array =  [| 1; 2; 3; 4; 5; 6; 7; 8; 9; 10 |]
+        let array =  [| 1 .. 10 |]
 
         // We needed this code for other files, so check out the code in the library
         let root = TreeNode.createMinimalBST array
@@ -44,7 +44,7 @@ type Question() =
         root |> postOrderTraversal printData
         printfn ""
 
-        let array =  [| 0; 1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12 |]
+        let array =  [| 0 .. 12 |]
 
         // We needed this code for other files, so check out the code in the library
         let root = TreeNode.createMinimalBST array

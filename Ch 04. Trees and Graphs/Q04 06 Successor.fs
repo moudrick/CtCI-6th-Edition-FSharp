@@ -38,7 +38,7 @@ module Sln =
             then TreeNode.tip
             else rec' n 
 
-        let goUpUntilOnLeft (n : TreeNode) =
+        let private goUpUntilOnLeft (n : TreeNode) =
             // Go up until we're on left instead of right
             let rec rec' (q, x) =
                 if (x = TreeNode.tip || x.left = q)
@@ -61,14 +61,14 @@ type Question() =
     inherit ctci.Contracts.Question()
 
     override this.DemoRun() =
-        let array =  [| 1; 2; 3; 4; 5; 6; 7; 8; 9; 10 |]
+        let array =  [| 1 .. 10 |]
 
         // We needed this code for other files, so check out the code in the library
         let root = TreeNode.createMinimalBST array
 
         for i in 0 .. array.Length - 1 do
             let node = root |> TreeNode.find array.[i]
-            let next = Sln.inorderSucc(node);
+            let next = Sln.inorderSucc node
             if (next <> TreeNode.tip) then
                 printfn "%i -> %i" node.data next.data
             else
@@ -76,7 +76,7 @@ type Question() =
 
         for i in 0 .. array.Length - 1 do
             let node = root |> TreeNode.find array.[i]
-            let next = Sln.NoMutable.inorderSucc(node);
+            let next = Sln.NoMutable.inorderSucc node
             if (next <> TreeNode.tip) then
                 printfn "%i -> %i" node.data next.data
             else

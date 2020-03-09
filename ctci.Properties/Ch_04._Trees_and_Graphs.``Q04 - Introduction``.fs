@@ -15,13 +15,13 @@ type Case = { root : TreeNode; inOrder : string; preOrder : string; postOrder : 
 
 let cases = seq [
     {
-        root = [| 1; 2; 3; 4; 5; 6; 7; 8; 9; 10 |] |> TreeNode.createMinimalBST ;
+        root = [| 1 .. 10 |] |> TreeNode.createMinimalBST ;
         inOrder = " 1 2 3 4 5 6 7 8 9 10";
         preOrder = " 5 2 1 3 4 8 6 7 9 10";
         postOrder = " 1 4 3 2 7 6 10 9 8 5";
     };
     {
-        root = [| 1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12 |] |> TreeNode.createMinimalBST ;
+        root = [| 1 .. 12 |] |> TreeNode.createMinimalBST ;
         inOrder = " 1 2 3 4 5 6 7 8 9 10 11 12";
         preOrder = " 6 3 1 2 4 5 9 7 8 11 10 12";
         postOrder = " 2 1 5 4 3 8 7 10 12 11 9 6";

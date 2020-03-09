@@ -42,7 +42,7 @@ type Question() =
 
     override this.DemoRun() =
         // Create balanced tree
-        let array =  [| 1; 2; 3; 4; 5; 6; 7; 8; 9; 10 |]
+        let array =  [| 1 .. 10 |]
         let root = TreeNode.createMinimalBST array
         printfn "Root? %i" root.data
         printfn "Is balanced? %b" (Sln.isBalanced root)
