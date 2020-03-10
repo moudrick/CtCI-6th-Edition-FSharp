@@ -2,10 +2,8 @@
     Ch_05._Bit_Manipulation.
     ``Q05 01 - Insertion``
 
-open FsCheck
-open FsCheck.Xunit
-
-open Ch_05._Bit_Manipulation.``Q05 01 - Insertion``
+open Ch_05._Bit_Manipulation.
+    ``Q05 01 - Insertion``
 
 type Case = { n : int; m : int; i : int; j : int; expected : int; }
     with static member get n m i j e =
@@ -20,12 +18,16 @@ let cases = seq [
     Case.get 0b11111111111111111010010010000000 0b101 29 31 0b10111111111111111010010010000000
 ]
 
-type CasesGenArb() =
-    static member Arb() = 
-        cases |> Gen.elements |> Arb.fromGen
+open FsCheck
+open FsCheck.Xunit
 
-[< Property(Verbose = true, Arbitrary = [| typeof<CasesGenArb> |]) >]
+type CasesGenArb() = static member Arb() = cases |> Gen.elements |> Arb.fromGen
+
+open Swensen.Unquote
+
+[< Property(Verbose = true, 
+    Arbitrary = [| typeof<CasesGenArb> |]) >]
 let ``Sln.updateBits works properly``
     (case : Case) =
 
-    Sln.updateBits case.n case.m case.i case.j = case.expected
+    Sln.updateBits case.n case.m case.i case.j =! case.expected

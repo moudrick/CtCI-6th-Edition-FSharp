@@ -2,10 +2,9 @@
     Ch_04._Trees_and_Graphs.
     ``Q04 02 - Minimal Tree``
 
-open FsCheck.Xunit
-open Swensen.Unquote
-
 open ctci.Library
+
+open Swensen.Unquote
 
 let rec preOrderAssertion expected actual =
     if (expected <> TreeNode.tip && actual <> TreeNode.tip) then
@@ -15,7 +14,9 @@ let rec preOrderAssertion expected actual =
     else
         expected =! actual
 
-[< Property( Verbose = true) >]
+open FsCheck.Xunit
+
+[< Property(Verbose = true) >]
 let ``TreeNode.createMinimalBST works properly`` () =
 
     let n1 = new TreeNode (1)

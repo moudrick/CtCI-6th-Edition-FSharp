@@ -2,10 +2,8 @@
     Ch_10._Sorting_and_Searching.
     ``Q10 01 - Sorted Merge``
 
-open FsCheck
-open FsCheck.Xunit
-
-open Ch_10._Sorting_and_Searching.``Q10 01 - Sorted Merge``
+open Ch_10._Sorting_and_Searching.
+    ``Q10 01 - Sorted Merge``
 
 type Case = { a : int[]; b : int[]; countA : int; countB : int; }
     with static member get a b ca cb =
@@ -37,46 +35,55 @@ let cases = seq {
                     [| 1; 2; 3; 4; 4; 5; 6; 6; 7; 7; 7; 8; 10; 100 |])
 }
 
-type CasesGenArb() =
-    static member Arb() = 
-        cases |> Gen.elements |> Arb.fromGen
+
 
 let exceptionalCases = seq {
     yield (Case.get [| 1; 3; 5; 0; 0; 0; |]
                      [| 2; 4; 6; 8; 10; 12; 14; |] 3 7,
                      typeof<System.IndexOutOfRangeException>)
 }
- 
-type ExceptionalCasesGenArb() =
-    static member Arb() = 
-        exceptionalCases |> Gen.elements |> Arb.fromGen
 
-[< Property(Verbose = true, Arbitrary = [| typeof<CasesGenArb> |]) >]
-let ``Sln.merge works properly``
-    (case : Case) (expected : int[]) =
+open FsCheck
+open FsCheck.Xunit
 
-    Sln.merge case.a case.b case.countA case.countB 
-    case.a = expected
+type CasesGenArb() = static member Arb() = cases |> Gen.elements |> Arb.fromGen
+type ExceptionalCasesGenArb() = static member Arb() = exceptionalCases |> Gen.elements |> Arb.fromGen
 
-[< Property(Verbose = true, Arbitrary = [| typeof<ExceptionalCasesGenArb> |]) >]
-let ``Sln.merge throws exception``
-    (case : Case) (exc : System.Type) =
+[<Properties( Verbose = true, 
+    Arbitrary = [| typeof<CasesGenArb> |] )>]
+module SlnProperties =
+    open Swensen.Unquote
 
-    lazy Xunit.Assert.Throws ( exc, 
-            (fun () -> Sln.merge case.a case.b case.countA case.countB |> ignore ) )
-        |> ignore
+    [< Property >]
+    let ``Sln.merge works properly``
+        (case : Case) (expected : int[]) =
 
-[< Property(Verbose = true, Arbitrary = [| typeof<CasesGenArb> |]) >]
-let ``Sln.NoMutable.merge works properly``
-    (case : Case) (expected : int[])  =
+        Sln.merge case.a case.b case.countA case.countB 
+        case.a =! expected
 
-    Sln.NoMutable.merge case.a case.b case.countA case.countB 
-    case.a = expected
+    [< Property >]
+    let ``Sln.NoMutable.merge works properly``
+        (case : Case) (expected : int[])  =
 
-[< Property(Verbose = true, Arbitrary = [| typeof<ExceptionalCasesGenArb> |]) >]
-let ``Sln.NoMutable.merge throws exception``
-    (case : Case) (exc : System.Type) =
+        Sln.NoMutable.merge case.a case.b case.countA case.countB 
+        case.a =! expected
 
-    lazy Xunit.Assert.Throws ( exc, 
-            (fun () -> Sln.NoMutable.merge case.a case.b case.countA case.countB |> ignore ) )
-        |> ignore
+[<Properties( Verbose = true, 
+    Arbitrary = [| typeof<ExceptionalCasesGenArb> |] )>]
+module SlnExceptionalProperties =
+
+    [< Property >]
+    let ``Sln.merge throws exception``
+        (case : Case) (exc : System.Type) =
+
+        lazy Xunit.Assert.Throws ( exc, 
+                (fun () -> Sln.merge case.a case.b case.countA case.countB |> ignore ) )
+            |> ignore
+
+    [< Property >]
+    let ``Sln.NoMutable.merge throws exception``
+        (case : Case) (exc : System.Type) =
+
+        lazy Xunit.Assert.Throws ( exc, 
+                (fun () -> Sln.NoMutable.merge case.a case.b case.countA case.countB |> ignore ) )
+            |> ignore

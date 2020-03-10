@@ -2,9 +2,6 @@
     Ch_01._Arrays_and_Strings.
     ``Q1 01 - Is Unique``
 
-open FsCheck
-open FsCheck.Xunit
-
 open Ch_01._Arrays_and_Strings.``Q1 01 - Is Unique``
 
 let isUnique =
@@ -21,42 +18,49 @@ let isUnique =
 
     Seq.concat [ expectUnique unique true; expectUnique nonUnique false ]
 
-type IsUniqueGenArb() =
-    static member Arb() = 
-        isUnique |> Gen.elements |> Arb.fromGen
+open FsCheck
+open FsCheck.Xunit
 
-[< Property(Verbose = true, Arbitrary = [| typeof<IsUniqueGenArb> |]) >]
-let ``Sln.isUniqueChars works properly``
-    (word : string) (isUnique : bool) =
+type IsUniqueGenArb() = static member Arb() = isUnique |> Gen.elements |> Arb.fromGen
 
-    Sln.isUniqueChars word = isUnique
+open Swensen.Unquote
 
-[< Property(Verbose = true, Arbitrary = [| typeof<IsUniqueGenArb> |]) >]
-let ``Sln.NoMutable.isUniqueChars works properly``
-    (word : string) (isUnique : bool) =
+[<Properties( Verbose = true, 
+    Arbitrary = [| typeof<IsUniqueGenArb> |] )>]
+module SlnProperties =
 
-    Sln.NoMutable.isUniqueChars word = isUnique
+    [< Property >]
+    let ``Sln.isUniqueChars works properly``
+        (word : string) (isUnique : bool) =
 
-[< Property(Verbose = true, Arbitrary = [| typeof<IsUniqueGenArb> |]) >]
-let ``Sln.ExtendedAscii.isUniqueChars works properly``
-    (word : string) (isUnique : bool) =
+        Sln.isUniqueChars word =! isUnique
 
-    Sln.ExtendedAscii.isUniqueChars word = isUnique
+    [< Property >]
+    let ``Sln.NoMutable.isUniqueChars works properly``
+        (word : string) (isUnique : bool) =
 
-[< Property(Verbose = true, Arbitrary = [| typeof<IsUniqueGenArb> |]) >]
-let ``Sln.GenericHashSet.isUniqueChars solution works properly``
-    (word : string) (isUnique : bool) =
+        Sln.NoMutable.isUniqueChars word =! isUnique
 
-    Sln.GenericHashSet.isUniqueChars word = isUnique
+    [< Property >]
+    let ``Sln.ExtendedAscii.isUniqueChars works properly``
+        (word : string) (isUnique : bool) =
 
-[< Property(Verbose = true, Arbitrary = [| typeof<IsUniqueGenArb> |]) >]
-let ``Sln.ImmutableSet.isUniqueChars works properly``
-    (word : string) (isUnique : bool) =
+        Sln.ExtendedAscii.isUniqueChars word =! isUnique
 
-    Sln.ImmutableSet.isUniqueChars word = isUnique
+    [< Property >]
+    let ``Sln.GenericHashSet.isUniqueChars solution works properly``
+        (word : string) (isUnique : bool) =
 
-[< Property(Verbose = true, Arbitrary = [| typeof<IsUniqueGenArb> |]) >]
-let ``Sln.ZipWithSort.isUniqueChars works properly``
-    (word : string) (isUnique : bool) =
+        Sln.GenericHashSet.isUniqueChars word =! isUnique
 
-    Sln.ZipWithSort.isUniqueChars word = isUnique
+    [< Property >]
+    let ``Sln.ImmutableSet.isUniqueChars works properly``
+        (word : string) (isUnique : bool) =
+
+        Sln.ImmutableSet.isUniqueChars word =! isUnique
+
+    [< Property >]
+    let ``Sln.ZipWithSort.isUniqueChars works properly``
+        (word : string) (isUnique : bool) =
+
+        Sln.ZipWithSort.isUniqueChars word =! isUnique
