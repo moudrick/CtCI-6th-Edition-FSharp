@@ -1,4 +1,5 @@
-﻿namespace Ch_04._Trees_and_Graphs.``Q04 02 - Minimal Tree``
+﻿namespace ``Ch 04``.`` Trees and Graphs``.
+    ``Q04 02 - Minimal Tree``
 
 open ctci.Library
 

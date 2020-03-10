@@ -1,4 +1,5 @@
-﻿namespace Ch_05._Bit_Manipulation.``Q05 01 - Insertion``
+﻿namespace ``Ch 05``.`` Bit Manipulation``.
+    ``Q05 01 - Insertion``
 
 open ctci.Library
 

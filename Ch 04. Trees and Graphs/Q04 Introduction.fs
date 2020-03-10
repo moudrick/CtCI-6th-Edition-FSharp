@@ -1,4 +1,5 @@
-﻿namespace Ch_04._Trees_and_Graphs.``Q04 - Introduction``
+﻿namespace ``Ch 04``.`` Trees and Graphs``.
+    ``Q04 - Introduction``
 
 open ctci.Library
 

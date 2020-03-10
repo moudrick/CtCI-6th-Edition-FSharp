@@ -1,9 +1,9 @@
 ﻿module ctci.Properties.
-    Ch_04._Trees_and_Graphs.
+    ``Ch 04``.`` Trees and Graphs``.
     ``Q04 - Introduction``
 
 open ctci.Library
-open Ch_04._Trees_and_Graphs.
+open ``Ch 04``.`` Trees and Graphs``.
     ``Q04 - Introduction``
 
 type Case = { root : TreeNode; inOrder : string; preOrder : string; postOrder : string }

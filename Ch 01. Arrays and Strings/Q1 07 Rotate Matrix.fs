@@ -1,4 +1,5 @@
-﻿namespace Ch_01._Arrays_and_Strings.``Q1 07 - Rotate Matrix``
+﻿namespace ``Ch 01``.`` Arrays and Strings``.
+    ``Q1 07 - Rotate Matrix``
 
 open ctci.Library
 

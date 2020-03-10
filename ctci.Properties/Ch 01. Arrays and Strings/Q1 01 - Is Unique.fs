@@ -1,8 +1,9 @@
 ﻿module ctci.Properties.
-    Ch_01._Arrays_and_Strings.
+    ``Ch 01``.`` Arrays and Strings``.
     ``Q1 01 - Is Unique``
 
-open Ch_01._Arrays_and_Strings.``Q1 01 - Is Unique``
+open ``Ch 01``.`` Arrays and Strings``.
+    ``Q1 01 - Is Unique``
 
 let isUnique =
     let unique = [| "abcde"; "kite"; "padle"; 

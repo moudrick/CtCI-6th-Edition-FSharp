@@ -1,4 +1,5 @@
-﻿namespace Ch_10._Sorting_and_Searching.``Q10 01 - Sorted Merge``
+﻿namespace ``Ch 10``.`` Sorting and Searching``.
+    ``Q10 01 - Sorted Merge``
 
 module Sln =
 

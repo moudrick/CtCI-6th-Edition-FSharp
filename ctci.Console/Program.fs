@@ -3,18 +3,18 @@ let main argv =
 
     let chapters : ctci.Contracts.Question [] [] = [|
         [| 
-            Ch_01._Arrays_and_Strings.``Q1 01 - Is Unique``.Question()
-            Ch_01._Arrays_and_Strings.``Q1 06 - String Compression``.Question()
-            Ch_01._Arrays_and_Strings.``Q1 07 - Rotate Matrix``.Question()
+            ``Ch 01``.`` Arrays and Strings``.``Q1 01 - Is Unique``.Question()
+            ``Ch 01``.`` Arrays and Strings``.``Q1 06 - String Compression``.Question()
+            ``Ch 01``.`` Arrays and Strings``.``Q1 07 - Rotate Matrix``.Question()
         |]; [|
-            Ch_04._Trees_and_Graphs.``Q04 - Introduction``.Question()
-            Ch_04._Trees_and_Graphs.``Q04 02 - Minimal Tree``.Question()
-            Ch_04._Trees_and_Graphs.``Q04 04 - Check Balanced``.Question()
-            Ch_04._Trees_and_Graphs.``Q04 06 - Successor``.Question()
+            ``Ch 04``.`` Trees and Graphs``.``Q04 - Introduction``.Question()
+            ``Ch 04``.`` Trees and Graphs``.``Q04 02 - Minimal Tree``.Question()
+            ``Ch 04``.`` Trees and Graphs``.``Q04 04 - Check Balanced``.Question()
+            ``Ch 04``.`` Trees and Graphs``.``Q04 06 - Successor``.Question()
         |]; [|
-            Ch_05._Bit_Manipulation.``Q05 01 - Insertion``.Question()
+            ``Ch 05``.`` Bit Manipulation``.``Q05 01 - Insertion``.Question()
         |]; [|
-            Ch_10._Sorting_and_Searching.``Q10 01 - Sorted Merge``.Question()
+            ``Ch 10``.`` Sorting and Searching``.``Q10 01 - Sorted Merge``.Question()
         |]
     |]
 

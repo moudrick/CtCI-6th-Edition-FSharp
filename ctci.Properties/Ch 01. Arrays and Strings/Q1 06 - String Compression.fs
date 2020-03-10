@@ -1,8 +1,8 @@
 ﻿module ctci.Properties.
-    Ch_01._Arrays_and_Strings.
+    ``Ch 01``.`` Arrays and Strings``.
     ``Q1 06 - String Compression``
 
-open Ch_01._Arrays_and_Strings.
+open ``Ch 01``.`` Arrays and Strings``.
     ``Q1 06 - String Compression``
 
 type Case = { original : string; compressed : string; name : string }

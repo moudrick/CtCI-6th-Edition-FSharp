@@ -1,9 +1,9 @@
 ﻿module ctci.Properties.
-    Ch_04._Trees_and_Graphs.
+    ``Ch 04``.`` Trees and Graphs``.
     ``Q04 06 - Successor``
 
 open ctci.Library
-open Ch_04._Trees_and_Graphs.
+open ``Ch 04``.`` Trees and Graphs``.
     ``Q04 06 - Successor``
 
 let node15Pairs = seq {

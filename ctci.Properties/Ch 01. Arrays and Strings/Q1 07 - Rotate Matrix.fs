@@ -1,9 +1,9 @@
 ﻿module ctci.Properties.
-    Ch_01._Arrays_and_Strings.
+    ``Ch 01``.`` Arrays and Strings``.
     ``Q1 07 - Rotate Matrix``
 
 open ctci.Library
-open Ch_01._Arrays_and_Strings.
+open ``Ch 01``.`` Arrays and Strings``.
     ``Q1 07 - Rotate Matrix``
 
 let matrices =
