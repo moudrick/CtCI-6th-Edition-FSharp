@@ -1,4 +1,5 @@
-﻿namespace Ch_01._Arrays_and_Strings.``Q1 01 - Is Unique``
+﻿namespace ``Ch 01``.`` Arrays and Strings``.
+    ``Q1 01 - Is Unique``
 
 module Sln =
     let isUniqueChars (str : string) : bool =

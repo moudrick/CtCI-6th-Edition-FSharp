@@ -7,10 +7,10 @@
     <Compile Include="Ch 01. Arrays and Strings\Q1 01 - Is Unique.fs" />
     <Compile Include="Ch 01. Arrays and Strings\Q1 06 - String Compression.fs" />
     <Compile Include="Ch 01. Arrays and Strings\Q1 07 - Rotate Matrix.fs" />
-    <Compile Include="Ch 04._Trees and Graphs\Q04 - Introduction.fs" />
-    <Compile Include="Ch 04._Trees and Graphs\Q04 02 - Minimal Tree.fs" />
-    <Compile Include="Ch 04._Trees and Graphs\Q04 04 - Check Balanced.fs" />
-    <Compile Include="Ch 04._Trees and Graphs\Q04 06 - Successor.fs" />
+    <Compile Include="Ch 04. Trees and Graphs\Q04 - Introduction.fs" />
+    <Compile Include="Ch 04. Trees and Graphs\Q04 02 - Minimal Tree.fs" />
+    <Compile Include="Ch 04. Trees and Graphs\Q04 04 - Check Balanced.fs" />
+    <Compile Include="Ch 04. Trees and Graphs\Q04 06 - Successor.fs" />
     <Compile Include="Ch 05. Bit Manipulation\Q05 01 - Insertion.fs" />
     <Compile Include="Ch 10. Sorting and Searching\Q10 01 - Sorted Merge.fs" />
     <Compile Include="Library\TreeNode.fs" />
@@ -34,7 +34,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Ch 01. Arrays and Strings\" />
-    <Folder Include="Ch 04._Trees and Graphs\" />
+    <Folder Include="Ch 04. Trees and Graphs\" />
     <Folder Include="Ch 05. Bit Manipulation\" />
     <Folder Include="Ch 10. Sorting and Searching\" />
     <Folder Include="Library\" />

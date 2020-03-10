@@ -1,8 +1,8 @@
 ﻿module ctci.Properties.
-    Ch_05._Bit_Manipulation.
+    ``Ch 05``.`` Bit Manipulation``.
     ``Q05 01 - Insertion``
 
-open Ch_05._Bit_Manipulation.
+open ``Ch 05``.`` Bit Manipulation``.
     ``Q05 01 - Insertion``
 
 type Case = { n : int; m : int; i : int; j : int; expected : int; }

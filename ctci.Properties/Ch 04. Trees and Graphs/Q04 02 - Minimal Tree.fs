@@ -1,5 +1,5 @@
 ﻿module ctci.Properties.
-    Ch_04._Trees_and_Graphs.
+    ``Ch 04``.`` Trees and Graphs``.
     ``Q04 02 - Minimal Tree``
 
 open ctci.Library

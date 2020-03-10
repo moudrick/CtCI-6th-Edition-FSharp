@@ -1,8 +1,8 @@
 ﻿module ctci.Properties.
-    Ch_10._Sorting_and_Searching.
+    ``Ch 10``.`` Sorting and Searching``.
     ``Q10 01 - Sorted Merge``
 
-open Ch_10._Sorting_and_Searching.
+open ``Ch 10``.`` Sorting and Searching``.
     ``Q10 01 - Sorted Merge``
 
 type Case = { a : int[]; b : int[]; countA : int; countB : int; }
