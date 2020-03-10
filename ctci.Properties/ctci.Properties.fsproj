@@ -4,16 +4,16 @@
     <IsPackable>false</IsPackable>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Ch_01._Arrays_and_Strings.``Q1 01 - Is Unique``.fs" />
-    <Compile Include="Ch_01._Arrays_and_Strings.``Q1 06 - String Compression``.fs" />
-    <Compile Include="Ch_01._Arrays_and_Strings.``Q1 07 - Rotate Matrix``.fs" />
-    <Compile Include="Ch_04._Trees_and_Graphs.``Q04 - Introduction``.fs" />
-    <Compile Include="Ch_04._Trees_and_Graphs.``Q04 02 - Minimal Tree`.fs" />
-    <Compile Include="Ch_04._Trees_and_Graphs.``Q04 04 - Check Balanced``.fs" />
-    <Compile Include="Ch_04._Trees_and_Graphs.``Q04 06 - Successor``.fs" />
-    <Compile Include="Ch_05._Bit_Manipulation.``Q05 01 - Insertion``.fs" />
-    <Compile Include="Ch_10._Sorting_and_Searching.``Q10 01 - Sorted Merge``.fs" />
-    <Compile Include="Library.TreeNode.fs" />
+    <Compile Include="Ch 01. Arrays and Strings\Q1 01 - Is Unique.fs" />
+    <Compile Include="Ch 01. Arrays and Strings\Q1 06 - String Compression.fs" />
+    <Compile Include="Ch 01. Arrays and Strings\Q1 07 - Rotate Matrix.fs" />
+    <Compile Include="Ch 04._Trees and Graphs\Q04 - Introduction.fs" />
+    <Compile Include="Ch 04._Trees and Graphs\Q04 02 - Minimal Tree.fs" />
+    <Compile Include="Ch 04._Trees and Graphs\Q04 04 - Check Balanced.fs" />
+    <Compile Include="Ch 04._Trees and Graphs\Q04 06 - Successor.fs" />
+    <Compile Include="Ch 05. Bit Manipulation\Q05 01 - Insertion.fs" />
+    <Compile Include="Ch 10. Sorting and Searching\Q10 01 - Sorted Merge.fs" />
+    <Compile Include="Library\TreeNode.fs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Ch 01. Arrays and Strings\Ch 01. Arrays and Strings.fsproj" />
@@ -31,5 +31,12 @@
     <PackageReference Include="xunit" Version="2.4.0" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.0" />
     <PackageReference Include="Unquote" Version="4.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Ch 01. Arrays and Strings\" />
+    <Folder Include="Ch 04._Trees and Graphs\" />
+    <Folder Include="Ch 05. Bit Manipulation\" />
+    <Folder Include="Ch 10. Sorting and Searching\" />
+    <Folder Include="Library\" />
   </ItemGroup>
 </Project>
