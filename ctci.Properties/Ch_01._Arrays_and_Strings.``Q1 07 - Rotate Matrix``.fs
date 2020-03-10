@@ -2,12 +2,9 @@
     Ch_01._Arrays_and_Strings.
     ``Q1 07 - Rotate Matrix``
 
-open FsCheck
-open FsCheck.Xunit
-
 open ctci.Library
-
-open Ch_01._Arrays_and_Strings.``Q1 07 - Rotate Matrix``
+open Ch_01._Arrays_and_Strings.
+    ``Q1 07 - Rotate Matrix``
 
 let matrices =
     seq {
@@ -78,9 +75,10 @@ let matrices =
     yield testRotate6x6Matrix
     }
 
-type ExpectedRotateMatrixGenArb() =
-    static member Matrices() = 
-        matrices |> Gen.elements |> Arb.fromGen
+open FsCheck
+open FsCheck.Xunit
+
+type ExpectedRotateMatrixGenArb() = static member Matrices() = matrices |> Gen.elements |> Arb.fromGen
 
 type ExpectedRotateIntListListGenArb() =
     static member Matrices() = 
@@ -90,21 +88,30 @@ type ExpectedRotateIntListListGenArb() =
         |> Gen.elements 
         |> Arb.fromGen
 
-[< Property(Verbose = true, Arbitrary = [| typeof<ExpectedRotateMatrixGenArb> |]) >]
-let ``Sln.rotate works properly``
-    (matrix : int[,]) (expectedRotatedMatrix : int[,]) =
+open Swensen.Unquote
 
-    matrix |> Sln.rotate <| Array2D.length1 matrix
-    matrix = expectedRotatedMatrix
+[<Properties( Verbose = true, 
+    Arbitrary = [| typeof<ExpectedRotateMatrixGenArb> |] )>]
+module SlnProperties =
+    [< Property >]
+    let ``Sln.rotate works properly``
+        (matrix : int[,]) (expectedRotatedMatrix : int[,]) =
 
-[< Property(Verbose = true, Arbitrary = [| typeof<ExpectedRotateIntListListGenArb> |]) >]
-let ``Sln.ByRevTranspose.rotate works properly``
-    (matrix : int list list) (expectedRotatedMatrix : int list list) =
+        matrix |> Sln.rotate <| Array2D.length1 matrix
 
-    matrix |> Sln.ByRevTranspose.rotate = expectedRotatedMatrix
+        matrix =! expectedRotatedMatrix
 
-[< Property(Verbose = true, Arbitrary = [| typeof<ExpectedRotateIntListListGenArb> |]) >]
-let ``Sln.ByRevCustomTranspose.rotate works properly``
-    (matrix : int list list) (expectedRotatedMatrix : int list list) =
+[<Properties( Verbose = true, 
+    Arbitrary = [| typeof<ExpectedRotateIntListListGenArb> |] )>]
+module SlnIntListListProperties =
+    [< Property >]
+    let ``Sln.ByRevTranspose.rotate works properly``
+        (matrix : int list list) (expectedRotatedMatrix : int list list) =
 
-    matrix |> Sln.ByRevCustomTranspose.rotate = expectedRotatedMatrix
+        matrix |> Sln.ByRevTranspose.rotate =! expectedRotatedMatrix
+
+    [< Property >]
+    let ``Sln.ByRevCustomTranspose.rotate works properly``
+        (matrix : int list list) (expectedRotatedMatrix : int list list) =
+
+        matrix |> Sln.ByRevCustomTranspose.rotate =! expectedRotatedMatrix

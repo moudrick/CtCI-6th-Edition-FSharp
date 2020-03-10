@@ -1,10 +1,6 @@
 ﻿module ctci.Properties.
     Library.TreeNode
 
-open FsCheck
-open FsCheck.Xunit
-open Swensen.Unquote
-
 open ctci.Library
 
 let treePairs = seq {
@@ -70,7 +66,12 @@ let genTreeHeightPair n = Seq.head <| Seq.skip n treePairs
 
 let cases = seq [ for i in 0 .. (Seq.length treePairs - 1) -> genTreeHeightPair i ]
 
+open FsCheck
+open FsCheck.Xunit
+
 type CasesGenArb() = static member Arb() = cases |> Gen.elements |> Arb.fromGen
+
+open Swensen.Unquote
 
 [< Property( Verbose = true, 
     Arbitrary = [| typeof<CasesGenArb> |] ) >]

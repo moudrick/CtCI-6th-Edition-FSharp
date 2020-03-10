@@ -2,12 +2,7 @@
     Ch_04._Trees_and_Graphs.
     ``Q04 06 - Successor``
 
-open FsCheck
-open FsCheck.Xunit
-open Swensen.Unquote
-
 open ctci.Library
-
 open Ch_04._Trees_and_Graphs.
     ``Q04 06 - Successor``
 
@@ -82,7 +77,12 @@ let node10Pairs =
 
 let cases = Seq.concat [ node15Pairs; List.toSeq node10Pairs; ]
 
+open FsCheck
+open FsCheck.Xunit
+
 type CasesGenArb() = static member Arb() = cases |> Gen.elements |> Arb.fromGen
+
+open Swensen.Unquote
 
 [<Properties( Verbose = true, 
     Arbitrary = [| typeof<CasesGenArb> |] )>]
@@ -101,4 +101,3 @@ module SlnProperties =
 
         let actualSuccessor = Sln.NoMutable.inorderSucc predecessor
         expectedSuccessor =! actualSuccessor
-

@@ -2,12 +2,7 @@
     Ch_04._Trees_and_Graphs.
     ``Q04 04 - Check Balanced``
 
-open FsCheck
-open FsCheck.Xunit
-open Swensen.Unquote
-
 open ctci.Library
-
 open Ch_04._Trees_and_Graphs.
     ``Q04 04 - Check Balanced``
 
@@ -87,7 +82,12 @@ let genTreeHeightPair n = Seq.head <| Seq.skip n treePairs
 
 let cases = seq [ for i in 0 .. (Seq.length treePairs - 1) -> genTreeHeightPair i ]
 
+open FsCheck
+open FsCheck.Xunit
+
 type CasesGenArb() = static member Arb() = cases |> Gen.elements |> Arb.fromGen
+
+open Swensen.Unquote
 
 [<Properties( Verbose = true, 
     Arbitrary = [| typeof<CasesGenArb> |] )>]

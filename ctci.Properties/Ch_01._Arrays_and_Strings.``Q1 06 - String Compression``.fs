@@ -2,11 +2,8 @@
     Ch_01._Arrays_and_Strings.
     ``Q1 06 - String Compression``
 
-open FsCheck
-open FsCheck.Xunit
-open Swensen.Unquote
-
-open Ch_01._Arrays_and_Strings.``Q1 06 - String Compression``
+open Ch_01._Arrays_and_Strings.
+    ``Q1 06 - String Compression``
 
 type Case = { original : string; compressed : string; name : string }
     with static member get o c n = { original = o; compressed = c; name = n }
@@ -22,36 +19,43 @@ let cases = seq [
     Case.get "abbccccccde" "a1b2c6d1e1" "One at end 2"
 ]
 
-type CasesGenArb() = 
-    static member Arb() = 
-        cases |> Gen.elements |> Arb.fromGen
+open FsCheck
+open FsCheck.Xunit
 
-[< Property(Verbose = true, Arbitrary = [| typeof<CasesGenArb> |]) >]
-let ``Sln.Bad.compress works properly``
-    (case : Case) =
+type CasesGenArb() = static member Arb() = cases |> Gen.elements |> Arb.fromGen
 
-    case.compressed =! Sln.Bad.compress case.original
+open Swensen.Unquote
 
-[< Property(Verbose = true, Arbitrary = [| typeof<CasesGenArb> |]) >]
-let ``Sln.compress works properly``
-    (case : Case) =
+[<Properties( Verbose = true, 
+    Arbitrary = [| typeof<CasesGenArb> |] )>]
+module SlnProperties =
 
-    case.compressed =! Sln.compress case.original
+    [< Property >]
+    let ``Sln.Bad.compress works properly``
+        (case : Case) =
 
-[< Property(Verbose = true, Arbitrary = [| typeof<CasesGenArb> |]) >]
-let ``Sln.Better.compress works properly``
-    (case : Case) =
+        case.compressed =! Sln.Bad.compress case.original
 
-    case.compressed =! Sln.Better.compress case.original
+    [< Property >]
+    let ``Sln.compress works properly``
+        (case : Case) =
 
-[< Property(Verbose = true, Arbitrary = [| typeof<CasesGenArb> |]) >]
-let ``Sln.Better.NoMutable.compress works properly``
-    (case : Case) =
+        case.compressed =! Sln.compress case.original
 
-    case.compressed =! Sln.Better.NoMutable.compress case.original
+    [< Property >]
+    let ``Sln.Better.compress works properly``
+        (case : Case) =
 
-[< Property(Verbose = true, Arbitrary = [| typeof<CasesGenArb> |]) >]
-let ``Sln.FoldrGroup.compress works properly``
-    (case : Case) =
+        case.compressed =! Sln.Better.compress case.original
 
-    case.compressed =! Sln.FoldrGroup.compress case.original
+    [< Property >]
+    let ``Sln.Better.NoMutable.compress works properly``
+        (case : Case) =
+
+        case.compressed =! Sln.Better.NoMutable.compress case.original
+
+    [< Property >]
+    let ``Sln.FoldrGroup.compress works properly``
+        (case : Case) =
+
+        case.compressed =! Sln.FoldrGroup.compress case.original

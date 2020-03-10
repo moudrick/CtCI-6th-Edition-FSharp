@@ -2,12 +2,7 @@
     Ch_04._Trees_and_Graphs.
     ``Q04 - Introduction``
 
-open FsCheck
-open FsCheck.Xunit
-open Swensen.Unquote
-
 open ctci.Library
-
 open Ch_04._Trees_and_Graphs.
     ``Q04 - Introduction``
 
@@ -28,6 +23,9 @@ let cases = seq [
     };
 ]
 
+open FsCheck
+open FsCheck.Xunit
+
 type CasesGenArb() = static member Arb() = cases |> Gen.elements |> Arb.fromGen
 
 type TreeVisitor() =
@@ -36,6 +34,8 @@ type TreeVisitor() =
         if (node <> TreeNode.tip)
         then data <- sprintf "%s %i" data (node.data)
     member this.collectedData with get() = data
+
+open Swensen.Unquote
 
 [<Properties( Verbose = true, 
     Arbitrary = [| typeof<CasesGenArb> |] )>]
